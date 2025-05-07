@@ -19,3 +19,4 @@ stories:
     entities:
       - produto: "Camiseta"
   - action: utter_confirmar_compra
+  
