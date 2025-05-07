@@ -1,0 +1,33 @@
+version: "3.1"
+
+nlu:
+- intent: cumprimentar
+  examples: |
+    - oi
+    - olá
+    - bom dia
+    - e aí
+
+- intent: despedir
+  examples: |
+    - tchau
+    - até logo
+    - falou
+
+- intent: perguntar_produtos
+  examples: |
+    - quais produtos vocês têm?
+    - o que vendem?
+    - me mostre os itens
+
+- intent: perguntar_preco
+  examples: |
+    - quanto custa?
+    - qual o preço?
+    - valores
+
+- intent: finalizar_compra
+  examples: |
+    - quero comprar
+    - finalizar pedido
+    - fechar compra

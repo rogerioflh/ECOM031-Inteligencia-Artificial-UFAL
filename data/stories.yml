@@ -1,0 +1,21 @@
+version: "3.1"
+
+stories:
+- story: cumprimento
+  steps:
+  - intent: cumprimentar
+  - action: utter_ola
+
+- story: listar produtos
+  steps:
+  - intent: perguntar_produtos
+  - action: utter_listar_produtos
+
+- story: finalizar compra
+  steps:
+  - intent: finalizar_compra
+  - action: utter_perguntar_item
+  - intent: informar_produto
+    entities:
+      - produto: "Camiseta"
+  - action: utter_confirmar_compra

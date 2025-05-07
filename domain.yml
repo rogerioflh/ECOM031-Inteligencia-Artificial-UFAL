@@ -1,0 +1,27 @@
+version: "3.1"
+
+intents:
+  - cumprimentar
+  - despedir
+  - perguntar_produtos
+  - perguntar_preco
+  - finalizar_compra
+
+responses:
+  utter_ola:
+    - text: "Olá! Bem-vindo à nossa loja. Como posso ajudar?"
+  
+  utter_tchau:
+    - text: "Até mais! Volte sempre."
+  
+  utter_listar_produtos:
+    - text: "Temos:\n- Camiseta (R$ 50)\n- Calça (R$ 100)\n- Tênis (R$ 150)"
+  
+  utter_perguntar_item:
+    - text: "Qual produto você deseja comprar?"
+  
+  utter_confirmar_compra:
+    - text: "Ótimo! Seu pedido de {produto} foi registrado. Obrigado!"
+
+actions:
+  - action_registrar_compra

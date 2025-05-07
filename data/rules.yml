@@ -1,0 +1,17 @@
+version: "3.1"
+
+rules:
+- rule: Cumprimento
+  steps:
+  - intent: cumprimentar
+  - action: utter_ola
+
+- rule: Despedida
+  steps:
+  - intent: despedir
+  - action: utter_tchau
+
+- rule: Listar Produtos
+  steps:
+  - intent: perguntar_produtos
+  - action: utter_listar_produtos
