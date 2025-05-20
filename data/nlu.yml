@@ -1,33 +1,39 @@
 version: "3.1"
-
 nlu:
-- intent: cumprimentar
-  examples: |
-    - oi
-    - olá
-    - bom dia
-    - e aí
-
-- intent: despedir
-  examples: |
-    - tchau
-    - até logo
-    - falou
-
-- intent: perguntar_produtos
-  examples: |
-    - quais produtos vocês têm?
-    - o que vendem?
-    - me mostre os itens
-
-- intent: perguntar_preco
-  examples: |
-    - quanto custa?
-    - qual o preço?
-    - valores
-
-- intent: finalizar_compra
-  examples: |
-    - quero comprar
-    - finalizar pedido
-    - fechar compra
+  - intent: saudacao
+    examples: |
+      - oi
+      - olá
+      - bom dia
+  - intent: comprar_roupa
+    examples: |
+      - quero comprar uma roupa
+      - desejo uma calça
+      - quero uma camisa
+  - intent: escolher_calca
+    examples: |
+      - quero uma calça
+  - intent: escolher_camisa
+    examples: |
+      - quero uma camisa
+  - intent: escolher_pacote
+    examples: |
+      - quero um pacote turístico
+      - quero viajar
+  - intent: abrir_conta
+    examples: |
+      - quero abrir uma conta
+      - preciso de uma conta no banco
+  - intent: affirm
+    examples: |
+      - sim
+      - claro
+      - com certeza
+  - intent: deny
+    examples: |
+      - não
+      - de jeito nenhum
+  - intent: despedida
+    examples: |
+      - tchau
+      - até mais

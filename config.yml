@@ -1,17 +1,19 @@
-version: "3.1"
-
+language: pt
 pipeline:
-- name: WhitespaceTokenizer
-- name: RegexFeaturizer
-- name: LexicalSyntacticFeaturizer
-- name: CountVectorsFeaturizer
-- name: DIETClassifier
-  epochs: 100
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: DIETClassifier
+  - name: FallbackClassifier
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+  - name: LanguageModelFeaturizer
+    model_name: "bert"
+    model_weights: "neuralmind/bert-base-portuguese-cased"
+  - name: ResponseSelector
 
 policies:
-- name: MemoizationPolicy
-- name: RulePolicy
-- name: TEDPolicy
-  max_history: 5
-  epochs: 100
-  
+  - name: RulePolicy
+  - name: MemoizationPolicy
+  - name: TEDPolicy

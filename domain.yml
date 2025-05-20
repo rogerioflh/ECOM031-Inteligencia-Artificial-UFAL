@@ -1,28 +1,101 @@
 version: "3.1"
 
 intents:
-  - cumprimentar
-  - despedir
-  - perguntar_produtos
-  - perguntar_preco
-  - finalizar_compra
+  - saudacao
+  - comprar_roupa
+  - escolher_calca
+  - escolher_camisa
+  - escolher_pacote
+  - info_maceio
+  - info_aracaju
+  - info_fortaleza
+  - abrir_conta
+  - affirm
+  - deny
+  - despedida
+
+entities:
+  - tamanho_calca
+  - fit
+  - tamanho_camisa
+  - gola
+  - cidade
+  - passeio
+  - transporte
+  - pagamento
+  - nome
+  - deposito
+  - emprestimo
+  - portabilidade
+
+slots:
+  tamanho_calca:
+    type: text
+  fit:
+    type: text
+  tamanho_camisa:
+    type: text
+  gola:
+    type: text
+  cidade:
+    type: text
+  passeio:
+    type: text
+  transporte:
+    type: text
+  pagamento:
+    type: text
+  nome:
+    type: text
+  deposito:
+    type: text
+  emprestimo:
+    type: bool
+  portabilidade:
+    type: bool
 
 responses:
-  utter_ola:
-    - text: "Olá! Bem-vindo à nossa loja. Como posso ajudar?"
-  
-  utter_tchau:
-    - text: "Até mais! Volte sempre."
-  
-  utter_listar_produtos:
-    - text: "Temos:\n- Camiseta (R$ 50)\n- Calça (R$ 100)\n- Tênis (R$ 150)"
-  
-  utter_perguntar_item:
-    - text: "Qual produto você deseja comprar?"
-  
-  utter_confirmar_compra:
-    - text: "Ótimo! Seu pedido de {produto} foi registrado. Obrigado!"
+  utter_saudacao:
+    - text: "Olá! Como posso te ajudar hoje? Loja, turismo ou conta bancária?"
+  utter_roupa_tipo:
+    - text: "Você quer comprar uma calça ou uma camisa?"
+  utter_pedir_tamanho_calca:
+    - text: "Qual o tamanho da calça? (34, 35 ou 36)"
+  utter_pedir_fit_calca:
+    - text: "Qual o tipo de fit da calça? (slim fit, regular fit, skinny fit)"
+  utter_pedir_tamanho_camisa:
+    - text: "Qual o tamanho da camisa? (P, M ou G)"
+  utter_pedir_gola:
+    - text: "Qual o tipo de gola da camisa? (v, redonda ou polo)"
+  utter_processando_pedido:
+    - text: "Pedido processado com sucesso!"
+  utter_pedir_cidade:
+    - text: "Para qual cidade deseja viajar? (Maceió, Aracaju ou Fortaleza)"
+  utter_belezas_maceio:
+    - text: "Você já conhece as belezas naturais de Maceió?"
+  utter_pacotes_maceio:
+    - text: "Temos dois pacotes: nove ilhas e orla de Alagoas."
+  utter_pacotes_aracaju:
+    - text: "Temos passeios para a passarela do caranguejo e a orla de Aracaju."
+  utter_transporte_aracaju:
+    - text: "Somente há passagem de ônibus. Deseja continuar?"
+  utter_pacote_fortaleza:
+    - text: "O pacote disponível é para as falésias cearenses. Deseja ir de ônibus ou avião?"
+  utter_pagamento:
+    - text: "Deseja pagar com cartão ou débito?"
+  utter_nome:
+    - text: "Qual o seu nome completo?"
+  utter_conta_existente:
+    - text: "Você já tem conta em outros bancos?"
+  utter_portabilidade:
+    - text: "Deseja fazer portabilidade?"
+  utter_deposito:
+    - text: "Qual valor será depositado inicialmente? (0 ou outro valor)"
+  utter_emprestimo:
+    - text: "Você gostaria de solicitar um empréstimo?"
+  utter_resumo_conta:
+    - text: "Conta criada com sucesso! Agradecemos pelas informações."
 
-actions:
-  - action_registrar_compra
-  
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

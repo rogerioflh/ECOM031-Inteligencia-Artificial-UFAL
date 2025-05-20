@@ -1,22 +1,57 @@
 version: "3.1"
-
 stories:
-- story: cumprimento
-  steps:
-  - intent: cumprimentar
-  - action: utter_ola
 
-- story: listar produtos
+- story: Compra de calça
   steps:
-  - intent: perguntar_produtos
-  - action: utter_listar_produtos
+    - intent: escolher_calca
+    - action: utter_pedir_tamanho_calca
+    - action: utter_pedir_fit_calca
+    - action: utter_processando_pedido
 
-- story: finalizar compra
+- story: Compra de camisa
   steps:
-  - intent: finalizar_compra
-  - action: utter_perguntar_item
-  - intent: informar_produto
-    entities:
-      - produto: "Camiseta"
-  - action: utter_confirmar_compra
-  
+    - intent: escolher_camisa
+    - action: utter_pedir_tamanho_camisa
+    - action: utter_pedir_gola
+    - action: utter_processando_pedido
+
+- story: Viagem Maceió
+  steps:
+    - intent: escolher_pacote
+    - action: utter_pedir_cidade
+    - intent: affirm
+    - action: utter_belezas_maceio
+    - action: utter_pacotes_maceio
+    - action: utter_pagamento
+    - action: utter_processando_pedido
+
+- story: Viagem Aracaju
+  steps:
+    - intent: escolher_pacote
+    - action: utter_pedir_cidade
+    - intent: affirm
+    - action: utter_pacotes_aracaju
+    - action: utter_transporte_aracaju
+    - intent: affirm
+    - action: utter_pagamento
+    - action: utter_processando_pedido
+
+- story: Viagem Fortaleza
+  steps:
+    - intent: escolher_pacote
+    - action: utter_pedir_cidade
+    - intent: affirm
+    - action: utter_pacote_fortaleza
+    - action: utter_pagamento
+    - action: utter_processando_pedido
+
+- story: Abrir Conta Bancária
+  steps:
+    - intent: abrir_conta
+    - action: utter_conta_existente
+    - intent: affirm
+    - action: utter_portabilidade
+    - action: utter_nome
+    - action: utter_deposito
+    - action: utter_emprestimo
+    - action: utter_resumo_conta
